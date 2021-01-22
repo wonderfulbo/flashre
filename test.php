@@ -23,7 +23,6 @@ function parsing_data($url, $data) {
     return $buffer;
 }
  
-$content = parsing_data("https://html5.gamedistribution.com/", "");
+$content = parsing_data("https://www.naver.com/", "");
 echo $content;
 ?>
-<iframe src=https://html5.gamedistribution.com/1f37997f4c6845519807e0a335ed1c75/?gp=1?gp=1&siteid=79&channelid=2&siteLocale=en-US&spilStorageId=8171988907 width=800 height=600></iframe>
