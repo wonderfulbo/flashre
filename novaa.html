@@ -1,0 +1,44 @@
+ <div id="gamewrapper" style="margin: 0 auto; width:960px; height:540px;">
+        <div id="gamediv">
+            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="960" height="540" id="game" align="middle">
+                <param name="allowScriptAccess" value="always" />                
+                <param name="movie" value="https://wonderfulbo.github.io/flashre/sue.swf" />
+                <param name="quality" value="high" />
+                <param name="wmode" value="direct" />
+                <param name="allowfullscreen" value="" />
+                <param name="allowfullscreeninteractive" value="false" />
+                <param name="fullScreenAspectRatio" value="" />
+                <param name="quality" value="" />
+                <param name="play" value="true" />
+                <param name="loop" value="true" />
+                <param name="menu" value="" />
+                <param name="flashvars" value="gameID=18089" />
+                <param name="hasPriority" value="true" />
+                <embed src="https://wonderfulbo.github.io/flashre/sue.swf" width="960" height="540" id="gamefileEmbed" name="gamefile" align="middle" wmode="direct" allowfullscreen="" allowfullscreeninteractive="false" fullScreenAspectRatio="" quality="high" play="true" loop="true" menu="" allowScriptAccess="always" flashvars="gameID=17817&auth_token=0879f623bc3245b8ba9449c418c38254&user_id=4e382c5b569356b2e951a5347832b5d5" hasPriority="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer"></embed>
+            </object>
+        </div> <!-- game-div -->
+    </div>
+</div>
+<script src="/tags/supernovalauncher.js?ver=113"></script>
+<script>
+    var randemo=false;
+    function tryRunDemo() {
+        supernova.getExtensionStatus(function(r){console.log("ExtStatus: "+r);})
+        if(randemo) return;                        
+        var target = document.querySelector("#game");
+        supernova.launch({
+            el: target, 
+            swfurl: "https://cdn.getsupernova.com/games/dungeonpunks.swf", 
+            flashvars: "gameID=18089", 
+            title: "Dungeon Punks",
+            icon:"https://cdn.getsupernova.com/images/dungeonpunks_icon.png",
+            width: 960,
+            height: 540,
+            partnerlogo:"http://cdn.getsupernova.com/images/icon-32x32.png",
+            slideorder:["enable_flashplayer","install_chrome_extension","install_supernova"]            
+        });
+        randemo=true;
+    }
+    tryRunDemo();
+</script>
+</div>
