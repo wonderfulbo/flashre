@@ -16,6 +16,119 @@ mode: "extensionprompt",
 el: document.querySelector("#game"),
 partnerlogo: "",
 title: "",
+<!DOCTYPE html>
+<HTML>
+<HEAD>    
+
+
+<title>SuperNova - Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+    <link rel="stylesheet" type="text/css" href="/css/theme.css">
+    <!--<link href="/css/fontawesome/css/all.css" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.2.1/cerulean/bootstrap.min.css">
+    <script src="/scripts/app.js"></script>
+</HEAD>
+<BODY>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<div id="alerts" style="position:fixed; z-index:2147483638; top:25px; right:25px;">
+
+</div>
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container">
+        
+        <a href="/" class="navbar-brand"><img border=0 src="/images/icon-32x32.png">&nbsp;SuperNova!</a>
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        
+            <ul class="navbar-nav nav nav-pills navbar-collapse">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">About SuperNova</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/download/">Download Player</a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link" href="/extension/">Install Extension</a>
+                </li>    
+                <li class="nav-item active">
+                    <a class="nav-link" href="/demo/">Demo</a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link" href="/setup/">For Webmasters - Setup</a>
+                </li>
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login/">Webmaster Login</a>
+                    </li>
+                </ul>
+            
+            </ul>
+        
+        </div>
+    </div>
+</div>
+
+<div class="content">            
+
+<div class="container">
+    <div id="gamewrapper" style="margin: 0 auto; width:960px; height:540px;">
+        <div id="gamediv">
+            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="960" height="540" id="game" align="middle">
+                <param name="allowScriptAccess" value="always" />                
+                <param name="movie" value="https://cache.armorgames.com/files/games/dungeon-punks-18089.swf?v=1479148394" />
+                <param name="quality" value="high" />
+                <param name="wmode" value="direct" />
+                <param name="allowfullscreen" value="" />
+                <param name="allowfullscreeninteractive" value="false" />
+                <param name="fullScreenAspectRatio" value="" />
+                <param name="quality" value="" />
+                <param name="play" value="true" />
+                <param name="loop" value="true" />
+                <param name="menu" value="" />
+                <param name="flashvars" value="gameID=18089" />
+                <param name="hasPriority" value="true" />
+                <embed src="https://cache.armorgames.com/files/games/dungeon-punks-18089.swf?v=1479148394" width="960" height="540" id="gamefileEmbed" name="gamefile" align="middle" wmode="direct" allowfullscreen="" allowfullscreeninteractive="false" fullScreenAspectRatio="" quality="high" play="true" loop="true" menu="" allowScriptAccess="always" flashvars="gameID=17817&auth_token=0879f623bc3245b8ba9449c418c38254&user_id=4e382c5b569356b2e951a5347832b5d5" hasPriority="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer"></embed>
+            </object>
+        </div> <!-- game-div -->
+    </div>
+</div>
+<script src="https://www.getsupernova.com/tags/supernovalauncher.js?ver=113"></script>
+<script>
+    var randemo=false;
+    function tryRunDemo() {
+        supernova.getExtensionStatus(function(r){console.log("ExtStatus: "+r);})
+        if(randemo) return;                        
+        var target = document.querySelector("#game");
+        supernova.launch({
+            el: target, 
+            swfurl: "https://cdn.getsupernova.com/games/dungeonpunks.swf", 
+            flashvars: "gameID=18089", 
+            title: "Dungeon Punks",
+            icon:"https://cdn.getsupernova.com/images/dungeonpunks_icon.png",
+            width: 960,
+            height: 540,
+            partnerlogo:"http://cdn.getsupernova.com/images/icon-32x32.png",
+            slideorder:["enable_flashplayer","install_chrome_extension","install_supernova"]            
+        });
+        randemo=true;
+    }
+    tryRunDemo();
+</script>
+</div>
+<div class="footer-privacy text-center bg-primary">&copy; 2019 Tactics Technology LLC - <a href="/privacypolicy/">Privacy Policy</a></div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</BODY>
+</HTML>
 icon: "",
 embedbar: true,
 dropdown: true,
